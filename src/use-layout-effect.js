@@ -25,6 +25,11 @@ export const LayoutEffectDemo = () => {
         setRenderTime(performance.now() - startTime.current);
     }, []);
 
+    // Начало рендера
+    // ├─ useLayoutEffect (синхронно, до paint)
+    // ├─ Фактический рендер (paint)
+    // └─ useEffect (асинхронно, после paint)
+
     return (
         <div style={{ padding: '20px', fontFamily: 'Arial' }}>
             <h2>Разница во времени выполнения (мс)</h2>
@@ -86,8 +91,3 @@ export const LayoutEffectDemo = () => {
         </div>
     );
 };
-
-// Начало рендера
-// ├─ useLayoutEffect (синхронно, до paint)
-// ├─ Фактический рендер (paint)
-// └─ useEffect (асинхронно, после paint)
