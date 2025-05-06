@@ -1,4 +1,4 @@
-import { Routes, Route, HashRouter, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Navbar } from './Navbar';
 import './App.css';
 import './styles/Home.css';
@@ -12,7 +12,7 @@ import {
 
 function App() {
     return (
-        <HashRouter>
+        <Router>
             <div className="App">
                 <Navbar />
 
@@ -30,7 +30,7 @@ function App() {
                     <Route path="/deferred-value-and-transition" element={<DeferredAndTransitionDemo />} />
                 </Routes>
             </div>
-        </HashRouter>
+        </Router>
     );
 }
 
