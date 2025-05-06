@@ -6,7 +6,7 @@ export const Navbar = () => {
         <nav className="navbar">
             <ul className="nav-list">
                 <li>
-                    <Link to="/" className="nav-link">
+                    <Link to="/react-advanced-hooks" className="nav-link">
                         Home
                     </Link>
                 </li>

@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route, HashRouter, Navigate } from 'react-router-dom';
 import { Navbar } from './Navbar';
 import './App.css';
 import './styles/Home.css';
@@ -12,11 +12,12 @@ import {
 
 function App() {
     return (
-        <Router>
+        <HashRouter>
             <div className="App">
                 <Navbar />
 
                 <Routes>
+                    <Route path="/" element={<Navigate to="/react-advanced-hooks" replace />} />
                     <Route path="/react-advanced-hooks" element={
                         <div className="home-container">
                             <h1 className="home-title">React Advanced Hooks Demo</h1>
@@ -29,7 +30,7 @@ function App() {
                     <Route path="/deferred-value-and-transition" element={<DeferredAndTransitionDemo />} />
                 </Routes>
             </div>
-        </Router>
+        </HashRouter>
     );
 }
 
