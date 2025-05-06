@@ -1,4 +1,4 @@
-#Хуки:
+# Advanced React Hooks:
 
 - useLayoutEffect:
   - https://habr.com/ru/articles/532224/
