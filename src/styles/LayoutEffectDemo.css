@@ -1,0 +1,59 @@
+.layout-effect-demo {
+    padding: 20px;
+    font-family: Arial;
+}
+
+.demo-title {
+    margin-bottom: 20px;
+}
+
+.tip {
+    color: grey;
+}
+
+.tip-list {
+    list-style: none;
+}
+
+.stats-container {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.difference-container {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e0f7fa;
+    border-radius: 4px;
+}
+
+.difference-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.explanation {
+    margin-top: 20px;
+    color: #555;
+    text-align: left;
+}
+
+.explanation-list {
+    padding-left: 20px;
+}

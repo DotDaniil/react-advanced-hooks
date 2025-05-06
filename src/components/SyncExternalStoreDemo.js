@@ -1,6 +1,7 @@
 import React, { useSyncExternalStore } from 'react';
+import '../styles/SyncExternalStoreDemo.css';
 
-// Создаем простое внешнее хранилище
+// Выносим создание хранилища в отдельную функцию
 function createStore(initialState) {
     let state = initialState;
     const listeners = new Set();
@@ -39,82 +40,39 @@ export const ExternalStoreDemo = () => {
     };
 
     return (
-        <div style={{
-            padding: '20px',
-            fontFamily: 'Arial',
-            margin: '20px auto'
-        }}>
+        <div className="demo-container">
             <h2>Демонстрация useSyncExternalStore</h2>
 
-            <div style={{
-                backgroundColor: '#f8f9fa',
-                padding: '15px',
-                borderRadius: '5px',
-                marginBottom: '20px',
-                textAlign: 'left'
-            }}>
+            <div className="explanation">
                 <p><strong>Как это работает:</strong></p>
-                <ul style={{ listStyle: 'none' }}>
+                <ul className="feature-list">
                     <li>Создано внешнее хранилище с состоянием</li>
                     <li>Компонент подписывается на изменения через <code>useSyncExternalStore</code></li>
                     <li>При изменении состояния хранилища компонент автоматически обновляется</li>
                 </ul>
             </div>
 
-            <div style={{
-                fontSize: '24px',
-                textAlign: 'center',
-                margin: '20px 0'
-            }}>
+            <div className="counter-value">
                 Текущее значение: <strong>{state.count}</strong>
             </div>
 
-            <div style={{
-                display: 'flex',
-                gap: '10px',
-                justifyContent: 'center'
-            }}>
+            <div className="buttons-container">
                 <button
                     onClick={decrement}
-                    style={{
-                        padding: '10px 15px',
-                        backgroundColor: '#f44336',
-                        color: 'white',
-                        border: 'none',
-                        borderRadius: '4px',
-                        cursor: 'pointer',
-                        fontSize: '16px'
-                    }}
-                >
+                    className="button button-decrement">
                     Уменьшить (-)
                 </button>
 
                 <button
                     onClick={increment}
-                    style={{
-                        padding: '10px 15px',
-                        backgroundColor: '#4CAF50',
-                        color: 'white',
-                        border: 'none',
-                        borderRadius: '4px',
-                        cursor: 'pointer',
-                        fontSize: '16px'
-                    }}
-                >
+                    className="button button-increment">
                     Увеличить (+)
                 </button>
             </div>
 
-            <div style={{
-                marginTop: '30px',
-                padding: '15px',
-                backgroundColor: '#e9f5fe',
-                borderRadius: '5px',
-                borderLeft: '4px solid #2196F3',
-                textAlign: 'left'
-            }}>
+            <div className="features">
                 <p><strong>Особенности useSyncExternalStore:</strong></p>
-                <ul style={{ listStyle: 'none' }}>
+                <ul className="feature-list">
                     <li>Позволяет работать с внешними источниками данных</li>
                     <li>Автоматически обрабатывает подписку и отписку</li>
                     <li>Гарантирует согласованность данных при конкурентном рендеринге</li>

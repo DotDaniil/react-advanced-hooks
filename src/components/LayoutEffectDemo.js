@@ -1,13 +1,12 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react';
+import React, { useState, useLayoutEffect, useEffect, useRef } from 'react';
+import '../styles/LayoutEffectDemo.css';
 
 export const LayoutEffectDemo = () => {
     const [effectTime, setEffectTime] = useState(0);
     const [layoutEffectTime, setLayoutEffectTime] = useState(0);
     const [renderTime, setRenderTime] = useState(0);
     const [showDifference, setShowDifference] = useState(false);
-
-    // Используем ref для хранения начального времени
-    const startTime = React.useRef(performance.now());
+    const startTime = useRef(performance.now());
 
     useLayoutEffect(() => {
         const endTime = performance.now();
@@ -20,10 +19,16 @@ export const LayoutEffectDemo = () => {
         setShowDifference(true);
     }, []);
 
-    // Фиксируем время рендера в useLayoutEffect
+    // Время рендера для демонстрации.
     useLayoutEffect(() => {
         setRenderTime(performance.now() - startTime.current);
     }, []);
+
+    // Фиксируем время рендера в useLayoutEffect.
+    // Не совсем точно отражает момент фактической отрисовки.
+    // Настоящий "paint" происходит между useLayoutEffect и useEffect, но измерить его момент сложно
+
+    // -----------------------------------------------------------------------------------
 
     // Начало рендера
     // ├─ useLayoutEffect (синхронно, до paint)
@@ -31,47 +36,41 @@ export const LayoutEffectDemo = () => {
     // └─ useEffect (асинхронно, после paint)
 
     return (
-        <div style={{ padding: '20px', fontFamily: 'Arial' }}>
-            <h2>Разница во времени выполнения (мс)</h2>
+        <div className="layout-effect-demo">
+            <h2>Демонстрация useLayoutEffect</h2>
 
-            <div style={{
-                backgroundColor: '#f5f5f5',
-                padding: '20px',
-                borderRadius: '8px',
-                margin: '20px 0'
-            }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <div>
+            <div className="tip">
+                <ul className="tip-list">
+                    <li>Не совсем точно отражает момент фактической отрисовки</li>
+                    <li>Настоящий "paint" происходит между useLayoutEffect и useEffect, но измерить его момент сложно</li>
+                    <li>Может потребоваться перезагрузить страницу</li>
+                </ul>
+            </div>
+
+            <h2 className="demo-title">Разница во времени выполнения (мс)</h2>
+
+            <div className="stats-container">
+                <div className="stats-grid">
+                    <div className="stat-item">
                         <h3>useLayoutEffect</h3>
-                        <p style={{ fontSize: '24px', fontWeight: 'bold' }}>
-                            {layoutEffectTime.toFixed(2)} ms
-                        </p>
+                        <p className="stat-value">{layoutEffectTime.toFixed(2)} ms</p>
                     </div>
 
-                    <div>
+                    <div className="stat-item">
                         <h3>Рендер</h3>
-                        <p style={{ fontSize: '24px', fontWeight: 'bold' }}>
-                            {renderTime.toFixed(2)} ms
-                        </p>
+                        <p className="stat-value">{renderTime.toFixed(2)} ms</p>
                     </div>
 
-                    <div>
+                    <div className="stat-item">
                         <h3>useEffect</h3>
-                        <p style={{ fontSize: '24px', fontWeight: 'bold' }}>
-                            {effectTime.toFixed(2)} ms
-                        </p>
+                        <p className="stat-value">{effectTime.toFixed(2)} ms</p>
                     </div>
                 </div>
 
                 {showDifference && (
-                    <div style={{
-                        marginTop: '20px',
-                        padding: '10px',
-                        backgroundColor: '#e0f7fa',
-                        borderRadius: '4px'
-                    }}>
+                    <div className="difference-container">
                         <p><strong>Разница:</strong></p>
-                        <ul style={{listStyle: 'none'}}>
+                        <ul className="difference-list">
                             <li>useLayoutEffect сработал на {(layoutEffectTime - renderTime).toFixed(2)} ms {layoutEffectTime > renderTime ? 'после' : 'до'} рендера</li>
                             <li>useEffect сработал на {(effectTime - renderTime).toFixed(2)} ms после рендера</li>
                         </ul>
@@ -79,9 +78,9 @@ export const LayoutEffectDemo = () => {
                 )}
             </div>
 
-            <div style={{ marginTop: '20px', color: '#555' }}>
-                <p style={{textAlign: 'left'}}><strong>Что происходит:</strong></p>
-                <ol style={{textAlign: 'left'}}>
+            <div className="explanation">
+                <p><strong>Что происходит:</strong></p>
+                <ol className="explanation-list">
                     <li>Компонент начинает рендериться (фиксируем начальное время)</li>
                     <li><b>useLayoutEffect</b> выполняется сразу после вычислений виртуального DOM, но ДО отрисовки в браузере</li>
                     <li>Браузер отрисовывает компонент (рендер)</li>

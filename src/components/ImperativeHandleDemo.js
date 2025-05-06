@@ -1,6 +1,7 @@
 import React, { forwardRef, useRef, useImperativeHandle } from 'react';
+import '../styles/ImperativeHandleDemo.css';
 
-export const CustomInput = forwardRef((props, ref) => {
+const CustomInput = forwardRef(({ placeholder, className }, ref) => {
     const inputRef = useRef();
 
     // useImperativeHandle позволяет определить методы,
@@ -28,8 +29,8 @@ export const CustomInput = forwardRef((props, ref) => {
         <input
             ref={inputRef}
             type="text"
-            placeholder={props.placeholder}
-            style={props.style}
+            placeholder={placeholder}
+            className={`input-field ${className}`}
         />
     );
 });
@@ -55,19 +56,13 @@ export const ImperativeHandleDemo = () => {
     };
 
     return (
-        <div style={{ padding: '20px', fontFamily: 'Arial' }}>
+        <div className="demo-container-imperative-handle">
             <h2>Демонстрация useImperativeHandle</h2>
 
-            <div style={{
-                backgroundColor: '#f0f0f0',
-                padding: '15px',
-                borderRadius: '5px',
-                marginBottom: '20px',
-                textAlign: 'left'
-            }}>
+            <div className="explanation">
                 <p><strong>Как это работает:</strong></p>
                 <p>Компонент CustomInput использует useImperativeHandle, чтобы предоставить родительскому компоненту доступ к следующим методам:</p>
-                <ul style={{ listStyle: 'none' }}>
+                <ul className="feature-list">
                     <li><strong>focus()</strong> - устанавливает фокус на input</li>
                     <li><strong>clear()</strong> - очищает значение input</li>
                     <li><strong>getValue()</strong> - возвращает текущее значение input</li>
@@ -78,80 +73,35 @@ export const ImperativeHandleDemo = () => {
             <CustomInput
                 ref={firstNameRef}
                 placeholder="Имя"
-                style={{
-                    marginBottom: '10px',
-                    padding: '8px',
-                    width: '100%',
-                    boxSizing: 'border-box'
-                }}
             />
 
             <CustomInput
                 ref={lastNameRef}
                 placeholder="Фамилия"
-                style={{
-                    marginBottom: '20px',
-                    padding: '8px',
-                    width: '100%',
-                    boxSizing: 'border-box'
-                }}
+                className="last-name-input"
             />
 
-            <div style={{
-                display: 'flex',
-                gap: '10px',
-                flexWrap: 'wrap'
-            }}>
+            <div className="buttons-container">
                 <button
                     onClick={handleFocusFirst}
-                    style={{
-                        padding: '8px 12px',
-                        backgroundColor: '#4CAF50',
-                        color: 'white',
-                        border: 'none',
-                        borderRadius: '4px',
-                        cursor: 'pointer'
-                    }}
-                >
+                    className="button button-focus">
                     Фокус на имя
                 </button>
 
                 <button
                     onClick={handleClearAll}
-                    style={{
-                        padding: '8px 12px',
-                        backgroundColor: '#f44336',
-                        color: 'white',
-                        border: 'none',
-                        borderRadius: '4px',
-                        cursor: 'pointer'
-                    }}
-                >
+                    className="button button-clear">
                     Очистить все
                 </button>
 
                 <button
                     onClick={handleShowValues}
-                    style={{
-                        padding: '8px 12px',
-                        backgroundColor: '#2196F3',
-                        color: 'white',
-                        border: 'none',
-                        borderRadius: '4px',
-                        cursor: 'pointer'
-                    }}
-                >
+                    className="button button-show">
                     Показать значения
                 </button>
             </div>
 
-            <div style={{
-                marginTop: '20px',
-                padding: '15px',
-                backgroundColor: '#e9f5fe',
-                borderRadius: '5px',
-                borderLeft: '4px solid #2196F3'
-            }}>
+            <div className="console-notice">
                 <p><strong>Что происходит в консоли:</strong></p>
                 <p>При нажатии кнопок в консоли выводятся сообщения о вызове соответствующих методов.</p>
                 <p>Откройте консоль разработчика (F12), чтобы увидеть логи вызовов.</p>

@@ -1,0 +1,65 @@
+/* Основные стили */
+.demo-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Стили для объяснения работы */
+.explanation {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.feature-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Стили для счетчика */
+.counter-value {
+    font-size: 24px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Стили для кнопок */
+.buttons-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.button {
+    padding: 10px 15px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: opacity 0.2s;
+}
+
+.button:hover {
+    opacity: 0.9;
+}
+
+.button-decrement {
+    background-color: #f44336;
+}
+
+.button-increment {
+    background-color: #4CAF50;
+}
+
+/* Стили для блока особенностей */
+.features {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #e9f5fe;
+    border-radius: 5px;
+    border-left: 4px solid #2196F3;
+    text-align: left;
+}

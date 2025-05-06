@@ -1,0 +1,136 @@
+/* Основные стили */
+.demo-container-deferred-and-transition {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.components-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+/* Стили для ввода */
+.input-section {
+    margin-bottom: 30px;
+}
+
+.input-field {
+    padding: 8px;
+    width: 100%;
+    font-size: 16px;
+}
+
+.value-display {
+    display: flex;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.value-box {
+    flex: 1;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.immediate-value {
+    background: #e3f2fd;
+}
+
+.deferred-value {
+    background: #e8f5e9;
+    transition: opacity 0.2s;
+}
+
+.pending {
+    opacity: 0.5;
+}
+
+.updating-text {
+    margin-left: 10px;
+    color: #ff9800;
+}
+
+/* Стили для тяжелого списка */
+.heavy-list-container {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+    transition: opacity 0.3s;
+}
+
+/* Стили для вкладок */
+.tab-section {
+    margin-bottom: 30px;
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.tab-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.tab-button.active {
+    background: #2196f3;
+    color: white;
+}
+
+.tab-button.inactive {
+    background: #e0e0e0;
+    color: black;
+}
+
+.tab-content {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    min-height: 100px;
+    position: relative;
+}
+
+.loading-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff9800;
+    font-size: 18px;
+}
+
+/* Стили для объяснения */
+.explanation {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 4px;
+    margin-top: 30px;
+}
+
+.explanation-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.explanation-column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.feature-list {
+    text-align: left;
+    padding-left: 20px;
+}
