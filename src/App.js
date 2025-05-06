@@ -17,7 +17,7 @@ function App() {
                 <Navbar />
 
                 <Routes>
-                    <Route path="/" element={
+                    <Route path="/react-advanced-hooks" element={
                         <div className="home-container">
                             <h1 className="home-title">React Advanced Hooks Demo</h1>
                             <p>Выберите хук из навигации сверху для демонстрации.</p>
