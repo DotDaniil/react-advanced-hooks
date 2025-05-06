@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { LayoutEffectDemo } from "./use-layout-effect";
 import { ImperativeHandleDemo } from "./use-imperative-handle";
 import {ExternalStoreDemo} from "./use-sync-external-store";
+import {DeferredAndTransitionDemo} from "./use-deferred-value-use-transition";
 
 function App() {
     return (
@@ -85,6 +86,22 @@ function App() {
                                 useSyncExternalStore Demo
                             </Link>
                         </li>
+                        <li>
+                            <Link
+                                to="/deferred-value-and-transition"
+                                style={{
+                                    textDecoration: 'none',
+                                    color: '#333',
+                                    fontWeight: 'bold',
+                                    padding: '5px 10px',
+                                    borderRadius: '4px',
+                                    transition: 'background-color 0.3s'
+                                }}
+                                activeStyle={{ backgroundColor: '#ddd' }}
+                            >
+                                useDeferredValue & useTransition Demo
+                            </Link>
+                        </li>
                     </ul>
                 </nav>
 
@@ -98,6 +115,7 @@ function App() {
                     <Route path="/layout-effect" element={<LayoutEffectDemo />} />
                     <Route path="/imperative-handle" element={<ImperativeHandleDemo />} />
                     <Route path="/sync-external-store" element={<ExternalStoreDemo />} />
+                    <Route path="/deferred-value-and-transition" element={<DeferredAndTransitionDemo />} />
                 </Routes>
             </div>
         </Router>
