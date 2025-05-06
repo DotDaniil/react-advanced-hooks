@@ -6,27 +6,27 @@ export const Navbar = () => {
         <nav className="navbar">
             <ul className="nav-list">
                 <li>
-                    <Link to="/react-advanced-hooks" className="nav-link">
+                    <Link to="/react-advanced-hooks/" className="nav-link">
                         Home
                     </Link>
                 </li>
                 <li>
-                    <Link to="/layout-effect" className="nav-link">
+                    <Link to="/layout-effect/" className="nav-link">
                         useLayoutEffect Demo
                     </Link>
                 </li>
                 <li>
-                    <Link to="/imperative-handle" className="nav-link">
+                    <Link to="/imperative-handle/" className="nav-link">
                         useImperativeHandle Demo
                     </Link>
                 </li>
                 <li>
-                    <Link to="/sync-external-store" className="nav-link">
+                    <Link to="/sync-external-store/" className="nav-link">
                         useSyncExternalStore Demo
                     </Link>
                 </li>
                 <li>
-                    <Link to="/deferred-value-and-transition" className="nav-link">
+                    <Link to="/deferred-value-and-transition/" className="nav-link">
                         useDeferredValue & useTransition Demo
                     </Link>
                 </li>
