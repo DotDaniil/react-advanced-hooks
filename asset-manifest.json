@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-advanced-hooks/static/css/main.e791406f.css",
+    "main.css": "/react-advanced-hooks/static/css/main.83d6565c.css",
     "main.js": "/react-advanced-hooks/static/js/main.970ce552.js",
     "static/js/453.6a279354.chunk.js": "/react-advanced-hooks/static/js/453.6a279354.chunk.js",
     "index.html": "/react-advanced-hooks/index.html",
-    "main.e791406f.css.map": "/react-advanced-hooks/static/css/main.e791406f.css.map",
+    "main.83d6565c.css.map": "/react-advanced-hooks/static/css/main.83d6565c.css.map",
     "main.970ce552.js.map": "/react-advanced-hooks/static/js/main.970ce552.js.map",
     "453.6a279354.chunk.js.map": "/react-advanced-hooks/static/js/453.6a279354.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e791406f.css",
+    "static/css/main.83d6565c.css",
     "static/js/main.970ce552.js"
   ]
 }
